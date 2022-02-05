@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:poppy"
+        },
+        {
+            "item": "minecraft:sugar"
+        },
+        {
+            "item": "squirtingsyringe:syringe"
+        },
+        {
+            "item": "minecraft:beetroot"
+        }
+    ],
+    "result": {
+        "item": "squirtingsyringe:heal_syringe",
+        "count": 1
+    }
+}

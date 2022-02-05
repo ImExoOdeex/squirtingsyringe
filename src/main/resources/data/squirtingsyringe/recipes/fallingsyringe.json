@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:phantom_membrane"
+        },
+        {
+            "item": "squirtingsyringe:syringe"
+        },
+        {
+            "item": "minecraft:cornflower"
+        }
+    ],
+    "result": {
+        "item": "squirtingsyringe:falling_syringe",
+        "count": 1
+    }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "squirtingsyringe",
+  "version": "${version}",
+  "name": "Squirting syringe",
+  "description": "Squirting Syringe adds a lot of useful syringes!",
+  "authors": [
+    "imexoodeex"
+  ],
+  "contact": {
+    "website": "https://www.cebuliony.pl",
+    "repo": "https://github.com/ImExoOdeex/squirting-syringe"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "assets/squirtingsyringe/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "imexoodeex.squirtingsyringe.client.SquirtingsyringeClient"
+    ],
+    "main": [
+      "imexoodeex.squirtingsyringe.Squirtingsyringe"
+    ]
+  },
+  "mixins": [
+    "squirtingsyringe.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.13.0",
+    "fabric": "*",
+    "minecraft": "1.18.1"
+  }
+}

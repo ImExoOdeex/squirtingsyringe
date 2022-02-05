@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:golden_carrot"
+        },
+        {
+            "item": "squirtingsyringe:syringe"
+        },
+        {
+            "item": "minecraft:coal"
+        }
+    ],
+    "result": {
+        "item": "squirtingsyringe:mining_syringe",
+        "count": 1
+    }
+}
