@@ -4,6 +4,7 @@
   "package": "imexoodeex.squirtingsyringe.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "ExperienceOrbEntityMixin"
   ],
   "client": [
   ],

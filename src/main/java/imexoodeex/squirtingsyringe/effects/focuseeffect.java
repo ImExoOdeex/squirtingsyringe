@@ -5,13 +5,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.player.PlayerEntity;
-import imexoodeex.squirtingsyringe.mixin.ExpOrb;
 
 public class focuseeffect extends StatusEffect {
     public focuseeffect() {
-        super(
-                StatusEffectCategory.BENEFICIAL,
-                0x98D982);
+        super(StatusEffectCategory.BENEFICIAL, 0x98D982);
     }
 
     @Override
@@ -21,14 +18,6 @@ public class focuseeffect extends StatusEffect {
 
     @Override
     public void applyUpdateEffect(LivingEntity entity, int i) {
-//        if (entity instanceof PlayerEntity) {
-//            PlayerEntity p = (PlayerEntity) entity;
-//            if (!p.world.isClient && !p.isSpectator()) {
-//                p.world.getEntitiesByClass(ExperienceOrbEntity.class, p.getBoundingBox().expand(2 + i * 2), null).forEach(orb -> {
-//                    orb.onPlayerCollision(p);
-//                    p.experiencePickUpDelay = 0;
-//                });
-//            }
-//        }
+        // code in mixins
     }
 }

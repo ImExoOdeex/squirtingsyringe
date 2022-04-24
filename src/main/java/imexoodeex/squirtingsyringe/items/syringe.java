@@ -19,16 +19,12 @@ public class syringe extends Item {
         super(settings);
     }
 
-    public static final syringe SYRINGE = new syringe(
-            new FabricItemSettings().group(ModItemGroup.SQUIRTINGSYRINGE).maxCount(16)
-                    .rarity(Rarity.COMMON));
-
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(new TranslatableText("item.squirtingsyringe.syringe.tooltip.shift"));
+            tooltip.add(new TranslatableText("shift"));
         } else {
-            tooltip.add(new TranslatableText("item.squirtingsyringe.syringe.tooltip"));
+            tooltip.add(new TranslatableText(getClass().getSimpleName()));
         }
     }
 

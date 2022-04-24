@@ -1,13 +1,13 @@
 package imexoodeex.squirtingsyringe.items;
 
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import imexoodeex.squirtingsyringe.sounds.Sounds;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -25,21 +25,40 @@ public class fallingsyringe extends Item {
         super(settings);
     }
 
-    public static final fallingsyringe FALLING_SYRINGE = new fallingsyringe(
-            new FabricItemSettings().group(ModItemGroup.SQUIRTINGSYRINGE).maxDamage(2)
-                    .rarity(Rarity.COMMON));
+    private boolean isUsed = false;
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         if (Screen.hasShiftDown()) {
-            tooltip.add(new TranslatableText("item.squirtingsyringe.fallingsyringe.tooltip.shift"));
+            tooltip.add(new TranslatableText("shift"));
         } else {
-            tooltip.add(new TranslatableText("item.squirtingsyringe.fallingsyringe.tooltip"));
+            tooltip.add(new TranslatableText(getClass().getSimpleName()));
         }
     }
 
     @Override
+    public ActionResult useOnEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) {
+
+        playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, (30 * 20), (2), true, false));
+        playerEntity.playSound(Sounds.SOUND_EVENT, 0.5f, 1.0f);
+
+        isUsed = true;
+
+        ItemStack itemStack = playerEntity.getStackInHand(hand);
+        itemStack.damage(1, playerEntity, (p) -> {
+            p.sendToolBreakStatus(hand);
+        });
+
+        isUsed = false;
+
+        return super.useOnEntity(stack, playerEntity, entity, hand);
+    }
+
+    @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
+        if (isUsed) {
+            return TypedActionResult.pass(playerEntity.getStackInHand(hand));
+        }
         playerEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOW_FALLING, (30 * 20), (2), true, false));
         playerEntity.playSound(Sounds.SOUND_EVENT, 0.5f, 1.0f);
 
