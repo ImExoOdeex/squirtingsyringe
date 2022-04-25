@@ -5,7 +5,6 @@ import imexoodeex.squirtingsyringe.sounds.Sounds;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -19,6 +18,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
+import static imexoodeex.squirtingsyringe.Squirtingsyringe.LOGGER;
+
 public class focussyringe extends Item {
 
     public focussyringe(Settings settings) {
@@ -29,21 +30,26 @@ public class focussyringe extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-            tooltip.add(new TranslatableText(getClass().getSimpleName()));
+        tooltip.add(new TranslatableText(getClass().getSimpleName()));
     }
 
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) {
+        isUsed = true;
 
         playerEntity.addStatusEffect(new StatusEffectInstance(Squirtingsyringe.FOCUS, (60 * 20), 1, true, true));
         playerEntity.playSound(Sounds.SOUND_EVENT, 0.5f, 1.0f);
 
-        isUsed = true;
 
         ItemStack itemStack = playerEntity.getStackInHand(hand);
         itemStack.damage(1, playerEntity, (p) -> {
             p.sendToolBreakStatus(hand);
         });
+        World world = playerEntity.getEntityWorld();
+
+        if (!world.isClient()) {
+            LOGGER.info("used on entity");
+        }
 
         isUsed = false;
 
@@ -62,6 +68,10 @@ public class focussyringe extends Item {
         itemStack.damage(1, playerEntity, (p) -> {
             p.sendToolBreakStatus(hand);
         });
+
+        if (!world.isClient()) {
+            LOGGER.info("used");
+        }
         return TypedActionResult.success(playerEntity.getStackInHand(hand));
     }
 }

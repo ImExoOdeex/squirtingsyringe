@@ -34,11 +34,7 @@ public class warriorsyringe extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        if (Screen.hasShiftDown()) {
-            tooltip.add(new TranslatableText("shift"));
-        } else {
             tooltip.add(new TranslatableText(getClass().getSimpleName()));
-        }
     }
 
     @Override
