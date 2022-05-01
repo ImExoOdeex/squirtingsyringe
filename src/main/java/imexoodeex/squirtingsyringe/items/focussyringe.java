@@ -33,13 +33,13 @@ public class focussyringe extends Item {
         tooltip.add(new TranslatableText(getClass().getSimpleName()));
     }
 
+
     @Override
     public ActionResult useOnEntity(ItemStack stack, PlayerEntity playerEntity, LivingEntity entity, Hand hand) {
         isUsed = true;
 
-        playerEntity.addStatusEffect(new StatusEffectInstance(Squirtingsyringe.FOCUS, (60 * 20), 1, true, true));
+        entity.addStatusEffect(new StatusEffectInstance(Squirtingsyringe.FOCUS, (60 * 20), 0, true, true));
         playerEntity.playSound(Sounds.SOUND_EVENT, 0.5f, 1.0f);
-
 
         ItemStack itemStack = playerEntity.getStackInHand(hand);
         itemStack.damage(1, playerEntity, (p) -> {
@@ -52,16 +52,16 @@ public class focussyringe extends Item {
         }
 
         isUsed = false;
-
-        return super.useOnEntity(stack, playerEntity, entity, hand);
+        return ActionResult.SUCCESS;
     }
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity playerEntity, Hand hand) {
         if (isUsed) {
             return TypedActionResult.pass(playerEntity.getStackInHand(hand));
+//            return ActionResult.PASS;
         }
-        playerEntity.addStatusEffect(new StatusEffectInstance(Squirtingsyringe.FOCUS, (60 * 20), 1, true, true));
+        playerEntity.addStatusEffect(new StatusEffectInstance(Squirtingsyringe.FOCUS, (60 * 20), 0, true, true));
         playerEntity.playSound(Sounds.SOUND_EVENT, 0.5f, 1.0f);
 
         ItemStack itemStack = playerEntity.getStackInHand(hand);
@@ -72,6 +72,7 @@ public class focussyringe extends Item {
         if (!world.isClient()) {
             LOGGER.info("used");
         }
+
         return TypedActionResult.success(playerEntity.getStackInHand(hand));
     }
 }

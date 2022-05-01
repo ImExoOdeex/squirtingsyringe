@@ -1,16 +1,14 @@
 package imexoodeex.squirtingsyringe.util;
 
+import imexoodeex.squirtingsyringe.registers.itemRegister;
 import net.fabricmc.fabric.api.loot.v1.FabricLootPoolBuilder;
 import net.fabricmc.fabric.api.loot.v1.FabricLootSupplierBuilder;
 import net.fabricmc.fabric.api.loot.v1.event.LootTableLoadingCallback;
-import net.minecraft.item.Item;
-import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.function.SetCountLootFunction;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import net.minecraft.util.Identifier;
-import imexoodeex.squirtingsyringe.registers.itemRegister;
 
 
 public class TableLootModifiers {
@@ -85,7 +83,7 @@ public class TableLootModifiers {
             = new Identifier("minecraft", "chests/woodland_mansion");
 
     // single item to chest loot
-    private static void registerLoot(Identifier id, FabricLootSupplierBuilder supplier, float chance, Item item, float min, float max) {
+/*    private static void registerLoot(Identifier id, FabricLootSupplierBuilder supplier, float chance, Item item, float min, float max) {
         if (id.equals(id)) {
             FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
                     .rolls(ConstantLootNumberProvider.create(1))
@@ -94,7 +92,7 @@ public class TableLootModifiers {
                     .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(min, max)).build());
             supplier.withPool(poolBuilder.build());
         }
-    }
+    }*/
 
     // all items to chest loot
     private static void registerMultipleLoot(Identifier id, FabricLootSupplierBuilder supplier, Identifier name) {
@@ -102,35 +100,35 @@ public class TableLootModifiers {
             FabricLootPoolBuilder poolBuilder = FabricLootPoolBuilder.builder()
                     .rolls(ConstantLootNumberProvider.create(1))
 
-                            .with(ItemEntry.builder(itemRegister.mining_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.mining_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.warrior_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.warrior_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.heal_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.heal_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.ghost_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.ghost_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.falling_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.falling_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.fire_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.fire_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.luck_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.luck_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.mushroom_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.mushroom_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
+                    .with(ItemEntry.builder(itemRegister.syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build())
 
-                            .with(ItemEntry.builder(itemRegister.remove_syringe))
-                            .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build());
+                    .with(ItemEntry.builder(itemRegister.remove_syringe))
+                    .withFunction(SetCountLootFunction.builder(UniformLootNumberProvider.create(1f, 1f)).build());
 
             supplier.withPool(poolBuilder.build());
         }
@@ -138,6 +136,7 @@ public class TableLootModifiers {
 
     public static void modifyLootTables() {
         LootTableLoadingCallback.EVENT.register(((resourceManager, manager, id, supplier, setter) -> {
+
             registerMultipleLoot(id, supplier, STRONGHOLD_CROSSING_CHEST_ID);
             registerMultipleLoot(id, supplier, BASTION_BRIDGE_CHEST_ID);
             registerMultipleLoot(id, supplier, BASTION_HOGLIN_CHEST_ID);

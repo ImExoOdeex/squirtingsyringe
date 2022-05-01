@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:raw_copper"
+    },
+    {
+      "item": "squirtingsyringe:syringe"
+    }
+  ],
+  "result": {
+    "item": "squirtingsyringe:focus_syringe",
+    "count": 1
+  }
+}

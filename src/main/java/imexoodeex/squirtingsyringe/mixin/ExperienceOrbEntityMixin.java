@@ -15,7 +15,7 @@ public abstract class ExperienceOrbEntityMixin {
     public void onPlayerCollision(PlayerEntity player, CallbackInfo ci) {
         if (player.hasStatusEffect(Squirtingsyringe.FOCUS)) {
             int i = player.experienceLevel;
-            player.addExperience(i / 2);
+            player.addExperience(i * 2);
         }
     }
 }

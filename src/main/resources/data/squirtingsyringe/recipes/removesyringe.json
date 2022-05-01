@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:leather"
+    },
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:feather"
+    },
+    {
+      "item": "squirtingsyringe:syringe"
+    }
+  ],
+  "result": {
+    "item": "squirtingsyringe:remove_syringe",
+    "count": 1
+  }
+}
