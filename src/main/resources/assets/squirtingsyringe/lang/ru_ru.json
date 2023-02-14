@@ -1,0 +1,27 @@
+{
+    "item.squirtingsyringe.heal_syringe": "Шприц исцеления",
+    "item.squirtingsyringe.remove_syringe": "Шприц очистки",
+    "item.squirtingsyringe.mining_syringe": "Шприц добычи",
+    "item.squirtingsyringe.warrior_syringe": "Шприц воина",
+    "item.squirtingsyringe.mushroom_syringe": "Шприц гриба",
+    "item.squirtingsyringe.ghost_syringe": "Шприц призрака",
+    "item.squirtingsyringe.falling_syringe": "Шприц падения",
+    "item.squirtingsyringe.fire_syringe": "Шприц огня",
+    "item.squirtingsyringe.luck_syringe": "Шприц удачи",
+    "item.squirtingsyringe.focus_syringe": "Шприц фокуса",
+    "item.squirtingsyringe.syringe": "Шприц",
+    "itemGroup.squirtingsyringe.squirtingsyringe": "Squirting syringe",
+    "effect.squirtingsyringe.focus_effect": "Фокус",
+
+    "healsyringe": "§5Исцеляет§r на несколько секунд.",
+    "fallingsyringe": "§9Замедлит§3 падение§r на 30 секунд.",
+    "firesyringe": "Сопротивление §cогня§r на 3 минуты.",
+    "ghostsyringe": "§7Невидимость§r и §eскорость.",
+    "lucksyringe": "§2Удача§f на 3 минуты.",
+    "miningsyringe": "§5Скорость добычи§r и §9ночное§f зрение.",
+    "mushroomsyringe": "§eГоловокружение§r на 15 секунд.",
+    "warriorsyringe": "Прибавка §dсилы, §cздоровья§r и §aсопротивления§r на 1 минуту!",
+    "removesyringe": "Убирает все §5эффекты§r. Подобно §3молоку.",
+    "focussyringe": "§5Удваивает§r количество собранных §3сфер§r опыта.",
+    "syringe": "§fИспользуется для создания других §dШ§3п§р§6и§cц§9о§7в§2s."
+}

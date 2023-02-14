@@ -1,2 +1,2 @@
 # Squirting Syringe
-For more info visit our [website](https://www.cebuliony.pl/squirting_syringe)
+[https://www.curseforge.com/minecraft/mc-mods/squirting-syringe](https://www.curseforge.com/minecraft/mc-mods/squirting-syringe)
