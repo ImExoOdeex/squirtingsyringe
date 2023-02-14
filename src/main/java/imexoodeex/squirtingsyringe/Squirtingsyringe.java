@@ -5,11 +5,12 @@ import imexoodeex.squirtingsyringe.registers.itemRegister;
 import imexoodeex.squirtingsyringe.util.TableLootModifiers;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import imexoodeex.squirtingsyringe.sounds.Sounds;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 public class Squirtingsyringe implements ModInitializer {
 
@@ -23,9 +24,9 @@ public class Squirtingsyringe implements ModInitializer {
         //items
         itemRegister.registerItems();
         // focus effect
-        Registry.register(Registry.STATUS_EFFECT, new Identifier(MOD_ID, "focus_effect"), FOCUS);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier(MOD_ID, "focus_effect"), FOCUS);
         // sound
-        Registry.register(Registry.SOUND_EVENT, Sounds.SOUND_ID, Sounds.SOUND_EVENT);
+        Registry.register(Registries.SOUND_EVENT, Sounds.SOUND_ID, Sounds.SOUND_EVENT);
         TableLootModifiers.modifyLootTables();
     }
 }

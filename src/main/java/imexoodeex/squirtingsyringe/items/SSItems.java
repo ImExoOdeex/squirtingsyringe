@@ -1,8 +1,9 @@
 package imexoodeex.squirtingsyringe.items;
 
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.Registry;
 
 import static imexoodeex.squirtingsyringe.Squirtingsyringe.MOD_ID;
 
@@ -12,7 +13,7 @@ public class SSItems extends Item {
     }
 
     public static Item registerItem(String itemName, Item item) {
-        Registry.register(Registry.ITEM, createIdentifier(itemName), item);
+        Registry.register(Registries.ITEM, createIdentifier(itemName), item);
         return item;
     }
 

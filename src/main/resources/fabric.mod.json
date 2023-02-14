@@ -8,7 +8,6 @@
     "imexoodeex"
   ],
   "contact": {
-    "website": "https://www.cebuliony.pl",
     "repo": "https://github.com/ImExoOdeex/squirting-syringe"
   },
   "license": "LGPL-3.0-only",
@@ -25,6 +24,6 @@
   "depends": {
     "fabricloader": ">=0.14.9",
     "fabric": "*",
-    "minecraft": "1.19.2"
+    "minecraft": "1.19.3"
   }
 }
