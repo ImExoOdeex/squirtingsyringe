@@ -12,5 +12,5 @@ import imexoodeex.squirtingsyringe.registers.itemRegister;
 public class ModItemGroup {
 
     public static final ItemGroup SQUIRTINGSYRINGE = FabricItemGroup.builder(new Identifier(Squirtingsyringe.MOD_ID, "group"))
-            .icon(() -> new ItemStack(itemRegister.warrior_syringe)).displayName(Text.literal("Foraging & Gathering")).build();
+            .icon(() -> new ItemStack(itemRegister.warrior_syringe)).displayName(Text.literal("Squirting syringe")).build();
 }
