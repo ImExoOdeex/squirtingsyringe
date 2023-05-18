@@ -15,7 +15,7 @@ import net.minecraft.util.Identifier;
 public class Squirtingsyringe implements ModInitializer {
 
     public static final String MOD_ID = "squirtingsyringe";
-    public static final Logger LOGGER = LogManager.getLogger("");
+    public static final Logger LOGGER = LogManager.getLogger(MOD_ID);
 
     public static final StatusEffect FOCUS = new focuseeffect();
 
